@@ -1,0 +1,17 @@
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\bin\Debug\net7.0\GroceryStore.EntityFramework.deps.json
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\bin\Debug\net7.0\GroceryStore.EntityFramework.runtimeconfig.json
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\bin\Debug\net7.0\GroceryStore.EntityFramework.dll
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\bin\Debug\net7.0\GroceryStore.EntityFramework.pdb
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\bin\Debug\net7.0\GroceryStore.Domain.dll
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\bin\Debug\net7.0\GroceryStore.Domain.pdb
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.AssemblyInfo.cs
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.csproj.CopyComplete
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.dll
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\refint\GroceryStore.EntityFramework.dll
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.pdb
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\GroceryStore.EntityFramework.genruntimeconfig.cache
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.EntityFramework\obj\Debug\net7.0\ref\GroceryStore.EntityFramework.dll

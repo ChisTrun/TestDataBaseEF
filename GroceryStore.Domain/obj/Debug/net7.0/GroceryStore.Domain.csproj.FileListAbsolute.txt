@@ -1,0 +1,11 @@
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\bin\Debug\net7.0\GroceryStore.Domain.deps.json
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\bin\Debug\net7.0\GroceryStore.Domain.dll
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\bin\Debug\net7.0\GroceryStore.Domain.pdb
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\obj\Debug\net7.0\GroceryStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\obj\Debug\net7.0\GroceryStore.Domain.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\obj\Debug\net7.0\GroceryStore.Domain.AssemblyInfo.cs
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\obj\Debug\net7.0\GroceryStore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\obj\Debug\net7.0\GroceryStore.Domain.dll
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\obj\Debug\net7.0\refint\GroceryStore.Domain.dll
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\obj\Debug\net7.0\GroceryStore.Domain.pdb
+C:\Users\USER\Desktop\local_Test\testEF\GroceryStore.Domain\obj\Debug\net7.0\ref\GroceryStore.Domain.dll
