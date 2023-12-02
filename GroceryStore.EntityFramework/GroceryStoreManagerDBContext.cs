@@ -11,12 +11,23 @@ namespace GroceryStore.EntityFramework.EntityFramework
 {
     public class GroceryStoreManagerDBContext : DbContext
     {
-        public DbSet<Coupon> Coupons { get; set; }
-        public DbSet<Customer> customers { get; set; }
-        public DbSet<Order> orders { get; set; }
-        public DbSet<OrderDetail> orderDetails { get; set; }
-        public DbSet<Product> products { get; set; }
-        public DbSet<ProductType> productsTypes { get; set; }
-        public GroceryStoreManagerDBContext(DbContextOptions options) : base(options){}  
+        public DbSet<Coupon> Coupon { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderDetail> OrderDetail { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<ProductType> ProductType { get; set; }
+
+        public string connectionString {  get; set; }
+        public GroceryStoreManagerDBContext(string connectionString)
+        {
+            this.connectionString = connectionString;   
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(connectionString);
+            base.OnConfiguring(optionsBuilder);
+        }
+
     }
 }

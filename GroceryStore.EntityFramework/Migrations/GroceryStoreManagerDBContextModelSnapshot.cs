@@ -43,7 +43,7 @@ namespace GroceryStore.EntityFramework.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Coupons");
+                    b.ToTable("Coupon");
                 });
 
             modelBuilder.Entity("GroceryStore.Domain.Models.Customer", b =>
@@ -63,7 +63,7 @@ namespace GroceryStore.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("customers");
+                    b.ToTable("Customer");
                 });
 
             modelBuilder.Entity("GroceryStore.Domain.Models.Order", b =>
@@ -87,7 +87,7 @@ namespace GroceryStore.EntityFramework.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("orders");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("GroceryStore.Domain.Models.OrderDetail", b =>
@@ -100,7 +100,7 @@ namespace GroceryStore.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("orderDetails");
+                    b.ToTable("OrderDetail");
                 });
 
             modelBuilder.Entity("GroceryStore.Domain.Models.Product", b =>
@@ -132,7 +132,7 @@ namespace GroceryStore.EntityFramework.Migrations
 
                     b.HasIndex("TypeId");
 
-                    b.ToTable("products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("GroceryStore.Domain.Models.ProductType", b =>
@@ -153,7 +153,7 @@ namespace GroceryStore.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("productsTypes");
+                    b.ToTable("ProductType");
                 });
 
             modelBuilder.Entity("GroceryStore.Domain.Models.Coupon", b =>

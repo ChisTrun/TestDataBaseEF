@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GroceryStore.EntityFramework.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialStore : Migration
+    public partial class Store : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "customers",
+                name: "Customer",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -22,11 +22,11 @@ namespace GroceryStore.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_customers", x => x.Id);
+                    table.PrimaryKey("PK_Customer", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "orderDetails",
+                name: "OrderDetail",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -34,11 +34,11 @@ namespace GroceryStore.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_orderDetails", x => x.Id);
+                    table.PrimaryKey("PK_OrderDetail", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "productsTypes",
+                name: "ProductType",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -48,11 +48,11 @@ namespace GroceryStore.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_productsTypes", x => x.Id);
+                    table.PrimaryKey("PK_ProductType", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Coupons",
+                name: "Coupon",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -63,16 +63,16 @@ namespace GroceryStore.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Coupons", x => x.Id);
+                    table.PrimaryKey("PK_Coupon", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Coupons_customers_CustomerId",
+                        name: "FK_Coupon_Customer_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "customers",
+                        principalTable: "Customer",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "orders",
+                name: "Order",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -83,17 +83,17 @@ namespace GroceryStore.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_orders", x => x.Id);
+                    table.PrimaryKey("PK_Order", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_orders_customers_CustomerId",
+                        name: "FK_Order_Customer_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "customers",
+                        principalTable: "Customer",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "products",
+                name: "Product",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -106,28 +106,28 @@ namespace GroceryStore.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_products", x => x.Id);
+                    table.PrimaryKey("PK_Product", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_products_productsTypes_TypeId",
+                        name: "FK_Product_ProductType_TypeId",
                         column: x => x.TypeId,
-                        principalTable: "productsTypes",
+                        principalTable: "ProductType",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Coupons_CustomerId",
-                table: "Coupons",
+                name: "IX_Coupon_CustomerId",
+                table: "Coupon",
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_CustomerId",
-                table: "orders",
+                name: "IX_Order_CustomerId",
+                table: "Order",
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_products_TypeId",
-                table: "products",
+                name: "IX_Product_TypeId",
+                table: "Product",
                 column: "TypeId");
         }
 
@@ -135,22 +135,22 @@ namespace GroceryStore.EntityFramework.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Coupons");
+                name: "Coupon");
 
             migrationBuilder.DropTable(
-                name: "orderDetails");
+                name: "Order");
 
             migrationBuilder.DropTable(
-                name: "orders");
+                name: "OrderDetail");
 
             migrationBuilder.DropTable(
-                name: "products");
+                name: "Product");
 
             migrationBuilder.DropTable(
-                name: "customers");
+                name: "Customer");
 
             migrationBuilder.DropTable(
-                name: "productsTypes");
+                name: "ProductType");
         }
     }
 }

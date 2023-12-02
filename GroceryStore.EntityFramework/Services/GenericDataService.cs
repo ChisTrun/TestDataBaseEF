@@ -2,9 +2,12 @@
 using GroceryStore.EntityFramework.EntityFramework;
 using GroceryStoreManager.Domain.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,16 +15,17 @@ namespace GroceryStore.EntityFramework.Services
 {
     public class GenericDataService<T> : IDataService<T> where T : DomainObject
     {
-        private readonly DBContextFactory? _dbContexFactory;
+            
+        private string _connectionString = string.Empty;
 
-        public GenericDataService(DBContextFactory? dbContexFactory)
+        public GenericDataService(string connectionString)
         {
-            _dbContexFactory = dbContexFactory;
-        }
+            this._connectionString = connectionString;
+        }   
 
         public async Task<T> Create(T entity)
         {
-            using (GroceryStoreManagerDBContext context = _dbContexFactory.CreateDbContext()) { 
+            using (GroceryStoreManagerDBContext context = new GroceryStoreManagerDBContext(_connectionString)) { 
                 var result = await context.Set<T>().AddAsync(entity);
                 await context.SaveChangesAsync();
                 return result.Entity;
@@ -30,8 +34,8 @@ namespace GroceryStore.EntityFramework.Services
 
         public async Task<bool> Delete(int id)
         {
-            using (GroceryStoreManagerDBContext context = _dbContexFactory.CreateDbContext()) {
-                T removeEntity = context.Set<T>().FirstOrDefault((e) => e.Id == id);
+            using (GroceryStoreManagerDBContext context = new GroceryStoreManagerDBContext(_connectionString)) {
+                T? removeEntity = context.Set<T>().FirstOrDefault((e) => e.Id == id);
                 context.Set<T>().Remove(removeEntity);
                 await context.SaveChangesAsync();
                 return true;
@@ -40,15 +44,15 @@ namespace GroceryStore.EntityFramework.Services
 
         public async Task<T> Get(int id)
         {
-            using (GroceryStoreManagerDBContext context = _dbContexFactory.CreateDbContext()) { 
-                T result =  context.Set<T>().FirstOrDefault(e => e.Id == id);
+            using (GroceryStoreManagerDBContext context = new GroceryStoreManagerDBContext(_connectionString)) { 
+                T? result =  context.Set<T>().FirstOrDefault(e => e.Id == id);
                 return result;
             }
         }
 
         public async Task<IEnumerable<T>> GetAll()
         {
-            using (GroceryStoreManagerDBContext context = _dbContexFactory.CreateDbContext()) {
+            using (GroceryStoreManagerDBContext context = new GroceryStoreManagerDBContext(_connectionString)) {
                 IEnumerable<T> entities = await context.Set<T>().ToListAsync();
                 return entities;
             }
@@ -57,10 +61,19 @@ namespace GroceryStore.EntityFramework.Services
         public async Task<T> Update(int id, T entity)
         {
             entity.Id = id;
-            using (GroceryStoreManagerDBContext context = _dbContexFactory.CreateDbContext()) { 
+            using (GroceryStoreManagerDBContext context = new GroceryStoreManagerDBContext(_connectionString)) { 
                 context.Set<T>().Update(entity);
                 await context.SaveChangesAsync();
                 return entity;
+            }
+        }
+
+        public async Task<IEnumerable<T>> TestQueryAsync()
+        {
+            using (GroceryStoreManagerDBContext context = new GroceryStoreManagerDBContext(_connectionString))
+            {
+                var result = await context.Set<T>().FromSqlRaw($"SELECT * FROM [{typeof(T).Name}]").ToListAsync();
+                return result;
             }
         }
     }
