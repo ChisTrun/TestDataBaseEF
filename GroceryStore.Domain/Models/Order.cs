@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace GroceryStore.Domain.Models
 {
-    public class Order : DomainObject
+    public class Order
     {
+        [Key]
+        public int Id { get; set; }
         public Customer Customer { get; set; }
 
         public DateTime OderDate { get; set; }

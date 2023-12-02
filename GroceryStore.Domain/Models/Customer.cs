@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace GroceryStore.Domain.Models
 {
-    public class Customer : DomainObject
+    public class Customer
     {
+        [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
 
-        public double MonneyForProtion { get; set; }
+        public double MoneyForPromotion { get; set; }
 
         public List<Coupon> Coupons { get; set; } = new List<Coupon>();
+
     }
 }

@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace GroceryStore.Domain.Models
 {
-    public class OrderDetail : DomainObject
+    public class OrderDetail
     {
         [Key]
         public Order order;
         [Key]
         public Product product;
+
         public int Quantity;
     }
 }

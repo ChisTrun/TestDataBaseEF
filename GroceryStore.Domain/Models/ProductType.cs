@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace GroceryStore.Domain.Models
 {
-    public class ProductType : DomainObject
+    public class ProductType
     {
-
+        [Key]
         public string Name { get; set; }
         public  string Image {  get; set; }
     }

@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace GroceryStore.Domain.Models
 {
-    public class Coupon : DomainObject
+    public class Coupon
     {
+        [Key]
+        public int Id { get; set; }
         public double ThresHold {  get; set; }
         public double perCoupon { get; set; }
     }
